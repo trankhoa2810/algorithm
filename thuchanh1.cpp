@@ -6,20 +6,44 @@ int Max(int arr[], int left, int right);
 int main()
 {
 	int arr[] = { 1, 2, 4, 5, 7 };
+	int max;
 	int arrLenght = (int)sizeof(arr) / sizeof(arr[0]);
-	printf("%d", binarySearch(arr, 0, arrLenght - 1, 7) );
-	
+	//printf("%d", binarySearch(arr, 0, arrLenght - 1, 7) );
+	max = Max(arr, 0, arrLenght - 1);
+	printf("%d", max);
 	return 0;	
 }
 
-int Max(int arr[], int left, int right)
+int Max(int arr[], int start, int end)
 {
+	int mm = 0;
+	if (end == start)
+	{
+		return arr[start];
+	}
+	if ((end - start) == 1)
+	{
+		if (arr[start] > arr[end])
+		{
+			return arr[start];
+		}
+		else
+		{
+			return arr[end];
+		}
+	}
+	int maxend = Max(arr, start, (end + start) / 2);
+	int maxstart = Max(arr, (end + start) / 2, end);
+	return mm = getLarger(maxend, maxstart);
 
 }
 
 int getLarger(int a, int b)
 {
-	if (a > b) return a;
+	if (a > b) {
+		return a;
+	}
+	return b;
 }
 
 
