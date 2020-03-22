@@ -1,8 +1,8 @@
 #include <stdio.h>
 float calculatePower(float x, int n);
-int binarySearch(int arr[], int left, int right, int s);  // khong tim thay return -1
+int binarySearch(double arr[], int left, int right, double s);  // khong tim thay return -1
 int getLarger(int a, int b);
-int Max(int arr[], int left, int right);
+int Max(double arr[], int left, int right);
 int main()
 {
 	int arr[] = { 1, 2, 4, 5, 7 };
@@ -47,7 +47,7 @@ int getLarger(int a, int b)
 {
 	return (a > b) ? a : b;
 }
-int binarySearch(int arr[], int left, int right, int s)
+int binarySearch(double arr[], int left, int right, double s)
 {
 
 	if (right >= left)
