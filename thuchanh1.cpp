@@ -69,7 +69,7 @@ int binarySearch(int arr[], int left, int right, int s)
 		return -1; 
 	}
 }
-float calculatePower(float x, int n)
+double calculatePower(float x, int n)
 {
 	if (n == 0)
 	{
