@@ -1,21 +1,22 @@
 #include <stdio.h>
-float calculatePower(float x, int n);
-int binarySearch(int arr[], int left, int right, int s);  // khong tim thay return -1
+double calculatePower(double x, int n);
+int binarySearch(double arr[], int left, int right, int s);  // khong tim thay return -1
 int getLarger(int a, int b);
 int Max(int arr[], int left, int right);
 int main()
 {
-	int arr[] = { 1, 2, 4, 5, 7 };
+	double arr[] = { 1, 2, 4, 5, 7 };
 	int arrLenght = (int)sizeof(arr) / sizeof(arr[0]);
 
-	int x, n;
-	printf("Nhap x: "); scanf_s("%d", &x);
+	double x;
+	int n;
+	printf("Nhap x: "); scanf_s("%lf", &x);
 	printf("Nhap n: "); scanf_s("%d", &n);
-	printf("%d ^ %d = %f", x, n, calculatePower(x, n));
+	printf("%.4f ^ %d = %.4lf", x, n, calculatePower(x, n));
 	int position = binarySearch(arr, 0, arrLenght - 1, x);
 	if (position != -1)
 	{
-		printf("\n%d nam o vi tri %d", x, position);
+		printf("\n%.4f nam o vi tri %d", x, position);
 	}
 	else 
 	{
@@ -27,7 +28,7 @@ int main()
 	return 0;
 }
 
-int Max(int arr[], int start, int end)
+int Max(double arr[], int start, int end)
 {
 	int mm = 0;
 	if (end == start)
@@ -69,7 +70,7 @@ int binarySearch(int arr[], int left, int right, int s)
 		return -1; 
 	}
 }
-float calculatePower(float x, int n)
+double calculatePower(double x, int n)
 {
 	if (n == 0)
 	{
